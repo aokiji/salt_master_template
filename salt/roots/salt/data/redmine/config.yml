@@ -1,0 +1,12 @@
+# default configuration options for all environments
+default:
+  # Outgoing emails configuration
+  email_delivery:
+    delivery_method: :smtp
+    smtp_settings:
+      address: "company.com"
+      port: 25
+      authentication: :login
+      domain: 'company.com'
+      user_name: 'support@company.com'
+      password: 'password'

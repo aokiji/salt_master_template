@@ -1,0 +1,1 @@
+hostname: minion2

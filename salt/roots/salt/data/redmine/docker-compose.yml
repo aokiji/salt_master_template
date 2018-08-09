@@ -1,0 +1,16 @@
+db:
+  image: "postgres:9.4"
+  environment:
+    - POSTGRES_PASSWORD=redmine
+    - POSTGRES_USER=redmine
+    - PGDATA=/var/lib/postgresql/data/pgdata
+  volumes:
+    - "/var/data/redmine/pgdata:/var/lib/postgresql/data/pgdata:Z"
+redmine:
+  build: .
+  links:
+    - db
+  ports:
+    - "{{ port }}:3000"
+  volumes:
+    - "/var/data/redmine/files:/usr/src/redmine/files:Z"

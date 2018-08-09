@@ -1,0 +1,10 @@
+[Unit]
+Description={{service_description}}
+After=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker-compose -f /var/lib/{{service_name}}/{{service_name}}.yml up
+ExecStop=/usr/bin/docker-compose -f /var/lib/{{service_name}}/{{service_name}}.yml stop
+
+[Install]
+WantedBy=multi-user.target
